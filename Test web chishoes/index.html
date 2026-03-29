@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChihoShoes! - Trang Chủ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: { 
+                extend: { 
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: { brand: '#FF5E00', brandHover: '#E55400', surface: '#F8FAFC' },
+                    animation: { marquee: 'marquee 20s linear infinite' },
+                    keyframes: { marquee: { '0%': { transform: 'translateX(0%)' }, '100%': { transform: 'translateX(-50%)' } } }
+                } 
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-gray-900 font-sans">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center">
+            <a href="index.html" class="text-3xl font-extrabold tracking-tighter text-black">ChihoShoes!</a>
+        </div>
+    </header>
+
+    <section class="relative bg-white overflow-hidden rounded-b-[3rem] shadow-sm mb-12">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-orange-100 to-transparent rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/3"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 py-20 md:py-32 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-8">
+                <div class="inline-block px-4 py-1.5 bg-orange-50 text-brand font-bold text-sm rounded-full tracking-wide">🔥 BỘ SƯU TẬP MỚI 2026</div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight leading-[1.1] text-black">Bước Vào <br><span class="text-brand">Tương Lai</span></h1>
+                <p class="text-lg text-gray-500 max-w-md font-medium leading-relaxed">Trải nghiệm sự kết hợp hoàn hảo giữa công nghệ đột phá và thiết kế vượt thời gian. Tỏa sáng phong cách đường phố của bạn.</p>
+                <a href="#products" class="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-brand transition-all transform hover:-translate-y-1 shadow-xl hover:shadow-brand/30">
+                    Khám Phá Ngay
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+            <div class="relative flex justify-center items-center">
+                <div class="absolute inset-0 bg-brand/5 rounded-full blur-3xl transform scale-75"></div>
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" alt="Sneaker" class="w-[90%] transform -rotate-12 hover:rotate-0 hover:scale-110 transition-all duration-700 ease-out drop-shadow-2xl relative z-10">
+            </div>
+        </div>
+    </section>
+
+    <div class="overflow-hidden bg-white py-10 border-y border-gray-100 flex shadow-sm rounded-3xl mx-6 mb-16 relative">
+        <div class="absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
+        <div class="absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
+        <div class="flex animate-marquee whitespace-nowrap items-center">
+            <div class="flex gap-20 px-10 opacity-40 grayscale font-black text-3xl tracking-widest text-gray-800 items-center">
+                <span>NIKE</span> <span>ADIDAS</span> <span>PUMA</span> <span>JORDAN</span> <span>CONVERSE</span> <span>VANS</span> <span>NEW BALANCE</span>
+            </div>
+            <div class="flex gap-20 px-10 opacity-40 grayscale font-black text-3xl tracking-widest text-gray-800 items-center">
+                <span>NIKE</span> <span>ADIDAS</span> <span>PUMA</span> <span>JORDAN</span> <span>CONVERSE</span> <span>VANS</span> <span>NEW BALANCE</span>
+            </div>
+        </div>
+    </div>
+
+    <section id="products" class="max-w-7xl mx-auto px-6 pb-24">
+        <div class="mb-12">
+            <h2 class="text-4xl font-extrabold tracking-tight text-black">Hàng Mới Về</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <script>
+                const products = [
+                    { id: "nike-air-max-270", name: "Nike Air Max 270", price: "3.800.000", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80", bg: "bg-[#cb1c22]/10" },
+                    { id: "azure-sprint-elite", name: "Azure Sprint Elite", price: "2.500.000", img: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500&q=80", bg: "bg-gray-100" },
+                    { id: "air-force-1-white", name: "Air Force 1 White", price: "2.950.000", img: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500&q=80", bg: "bg-gray-100" },
+                    { id: "jordan-1-retro", name: "Jordan 1 Retro", price: "4.200.000", img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&q=80", bg: "bg-yellow-50" },
+                    { id: "forest-runner-x", name: "Forest Runner X", price: "2.200.000", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&q=80", bg: "bg-zinc-900" },
+                    { id: "pink-dream-lite", name: "Pink Dream Lite", price: "1.850.000", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80", bg: "bg-orange-400" },
+                    { id: "classic-tan-heritage", name: "Classic Tan Heritage", price: "2.700.000", img: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&q=80", bg: "bg-green-400" },
+                    { id: "neon-cyber-x", name: "Neon Cyber X", price: "3.400.000", img: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=500&q=80", bg: "bg-indigo-50" }, 
+                    { id: "court-legend-purple", name: "Court Legend Purple", price: "3.500.000", img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&q=80", bg: "bg-gray-100" },
+                    { id: "urban-street-black", name: "Urban Street Black", price: "2.100.000", img: "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=500&q=80", bg: "bg-blue-300" }
+                ];
+
+                products.forEach(p => {
+                    document.write(`
+                        <div class="group relative bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full hover:-translate-y-2">
+                            <a href="product.html?id=${p.id}" class="block relative ${p.bg} rounded-2xl overflow-hidden aspect-square mb-5">
+                                <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                                <div class="absolute top-3 left-3 bg-white text-black text-xs font-bold px-3 py-1 rounded-full shadow-sm">Mới</div>
+                            </a>
+                            <div class="flex flex-col flex-grow px-2 pb-2">
+                                <a href="product.html?id=${p.id}"><h3 class="font-bold text-gray-900 text-lg leading-tight mb-2 hover:text-brand transition-colors">${p.name}</h3></a>
+                                <div class="mt-auto flex items-center justify-between">
+                                    <p class="text-lg font-extrabold text-black">${p.price} <span class="text-sm font-semibold text-gray-500">đ</span></p>
+                                    
+                                    <a href="product.html?id=${p.id}" class="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:bg-brand transition-colors shadow-md transform active:scale-95">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white rounded-t-[3rem] mt-12 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 pt-20 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <div class="md:col-span-6">
+                    <h2 class="text-4xl font-extrabold tracking-tight mb-6 text-white">ChihoShoes!</h2>
+                    <p class="text-gray-400 font-medium leading-relaxed mb-8 max-w-sm">Không chỉ là giày, đó là lối sống. Hãy để chúng tôi đồng hành cùng từng bước chân của bạn trên mọi nẻo đường.</p>
+                </div>
+                <div class="md:col-span-6 flex flex-col md:pl-12 justify-start">
+                    <h4 class="font-bold text-xl mb-6 text-white">Đăng Ký Nhận Tin</h4>
+                    <p class="text-gray-400 mb-4 font-medium">Nhận mã giảm giá 10% cho đơn hàng đầu tiên!</p>
+                    <div class="flex gap-2 max-w-md">
+                        <input type="email" placeholder="Email của bạn" class="flex-1 px-5 py-3.5 bg-white/10 border border-gray-700 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-brand font-medium">
+                        <button class="px-6 py-3.5 bg-brand text-white rounded-xl font-bold hover:bg-brandHover transition-colors shadow-lg shadow-orange-500/20">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-medium">
+                <p>&copy; 2026 ChihoShoes!. Đã đăng ký bản quyền.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

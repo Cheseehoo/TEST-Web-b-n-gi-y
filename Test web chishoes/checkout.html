@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChihoShoes! - Thanh Toán</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = {
+            theme: { 
+                extend: { 
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: { brand: '#FF5E00', brandHover: '#E55400', surface: '#F8FAFC' }
+                } 
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        input[type="radio"]:checked + div { border-color: #FF5E00; background-color: #fff7f2; }
+        input[type="radio"]:checked + div svg { color: #FF5E00; }
+        input[type="radio"]:checked + div p.title { color: #FF5E00; }
+    </style>
+</head>
+<body class="bg-surface text-gray-900 font-sans relative">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center">
+            <a href="index.html" class="text-3xl font-extrabold tracking-tighter text-black hover:text-brand transition-colors">ChihoShoes!</a>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 py-12 pb-24">
+        <nav class="flex text-sm font-medium text-gray-500 mb-8 gap-2">
+            <a href="index.html" class="hover:text-black">Trang chủ</a>
+            <span>/</span>
+            <span class="text-black font-bold">Thanh toán đơn hàng</span>
+        </nav>
+
+        <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-black mb-10 uppercase">Thanh Toán Đơn Hàng</h1>
+
+        <form class="grid lg:grid-cols-12 gap-10" onsubmit="return handleCheckout(event)">
+            <div class="lg:col-span-7 space-y-8">
+                
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                    <h2 class="text-xl font-extrabold mb-6 flex items-center gap-2 text-black">
+                        <svg class="text-brand" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                        Sản Phẩm Của Bạn
+                    </h2>
+                    
+                    <div class="flex flex-col sm:flex-row gap-6 items-center py-4">
+                        <div id="checkout-img-bg" class="w-32 h-32 bg-[#cb1c22] rounded-2xl flex items-center justify-center p-3 shrink-0 overflow-hidden shadow-inner">
+                            <img id="checkout-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" alt="Sản phẩm" class="w-full h-full object-contain transform hover:scale-110 transition-transform duration-500">
+                        </div>
+                        <div class="flex-1 w-full">
+                            <div class="flex justify-between items-start mb-3">
+                                <h3 id="checkout-name" class="font-extrabold text-2xl text-black">Nike Air Max 270</h3>
+                            </div>
+                            <div class="flex gap-3 mb-4">
+                                <p class="text-sm text-gray-500 font-semibold bg-gray-50 inline-block px-3 py-1 rounded-lg">Kích cỡ: Mặc định</p>
+                                <p class="text-sm text-gray-500 font-semibold bg-gray-50 inline-block px-3 py-1 rounded-lg">Số lượng: 1</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-auto">
+                                <p id="checkout-price" class="font-extrabold text-xl text-brand">3.800.000 <span class="text-sm font-bold text-gray-500">VNĐ</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex flex-col sm:flex-row gap-3 pt-6 border-t border-gray-100">
+                        <div class="relative flex-1">
+                            <svg class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            <input type="text" placeholder="Nhập mã giảm giá (Nếu có)" class="w-full pl-12 pr-4 py-3.5 border border-gray-200 rounded-2xl focus:outline-none focus:border-black focus:ring-1 focus:ring-black font-medium text-gray-900 placeholder:text-gray-400 transition-all">
+                        </div>
+                        <button type="button" class="px-8 py-3.5 bg-black text-white font-bold rounded-2xl hover:bg-gray-800 transition-colors shadow-md">Áp dụng</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                    <h2 class="text-xl font-extrabold mb-6 flex items-center gap-2 text-black">
+                        <svg class="text-brand" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                        Thông Tin Giao Hàng
+                    </h2>
+                    <div class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-bold mb-2 text-gray-700">Họ và tên <span class="text-red-500">*</span></label>
+                                <input type="text" id="cust-name" placeholder="VD: Nguyễn Văn A" class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand font-medium transition-all" required>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold mb-2 text-gray-700">Số điện thoại <span class="text-red-500">*</span></label>
+                                <input type="tel" id="cust-phone" placeholder="VD: 0912 345 678" class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand font-medium transition-all" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold mb-2 text-gray-700">Địa chỉ chi tiết <span class="text-red-500">*</span></label>
+                            <input type="text" id="cust-address" placeholder="Số nhà, đường, phường/xã, quận/huyện, thành phố" class="w-full px-5 py-3.5 bg-white border border-gray-200 rounded-2xl focus:outline-none focus:border-brand focus:ring-1 focus:ring-brand font-medium transition-all" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
+                    <h2 class="text-xl font-extrabold mb-6 flex items-center gap-2 text-black">
+                        <svg class="text-brand" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                        Phương Thức Thanh Toán
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="payment" value="cod" checked class="sr-only peer">
+                            <div class="flex flex-col items-center justify-center text-center gap-3 p-5 border-2 border-gray-100 rounded-2xl transition-all duration-200 hover:border-brand/50 h-full">
+                                <svg class="text-gray-400 transition-colors" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                                <div>
+                                    <p class="title font-bold text-gray-700 transition-colors">Thanh toán COD</p>
+                                    <p class="text-xs text-gray-500 font-medium mt-1">Nhận hàng thanh toán tiền</p>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="cursor-pointer relative">
+                            <input type="radio" name="payment" value="bank" class="sr-only peer">
+                            <div class="flex flex-col items-center justify-center text-center gap-3 p-5 border-2 border-gray-100 rounded-2xl transition-all duration-200 hover:border-brand/50 h-full">
+                                <svg class="text-gray-400 transition-colors" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"/><path d="M3 7v1a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7"/><path d="M12 2L2 7h20L12 2z"/><path d="M6 10v7"/><path d="M10 10v7"/><path d="M14 10v7"/><path d="M18 10v7"/></svg>
+                                <div>
+                                    <p class="title font-bold text-gray-700 transition-colors">Thanh toán Ngân hàng</p>
+                                    <p class="text-xs text-gray-500 font-medium mt-1">Quét mã VietQR chuyển khoản</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5">
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-gray-100 sticky top-32">
+                    <h2 class="text-xl font-extrabold mb-8 text-black border-b border-gray-100 pb-4">Tổng Kết Đơn Hàng</h2>
+                    
+                    <div class="space-y-4 text-gray-600 font-medium mb-8 text-sm">
+                        <div class="flex justify-between items-center">
+                            <span>Tạm tính (1 sản phẩm):</span>
+                            <span id="summary-subtotal" class="text-black font-extrabold text-lg">3.800.000 VNĐ</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Phí vận chuyển:</span>
+                            <span class="text-black font-extrabold text-lg">50.000 VNĐ</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-6 border-t border-dashed border-gray-300 mb-8">
+                        <div class="flex flex-col gap-2">
+                            <div class="flex justify-between items-end">
+                                <span class="text-lg font-bold text-gray-700">Tổng thanh toán:</span>
+                                <span id="summary-total" class="text-4xl font-extrabold text-brand leading-none text-right">3.850.000 <br><span class="text-2xl text-gray-400">VNĐ</span></span>
+                            </div>
+                            <p class="text-right text-xs text-gray-400 font-medium mt-1">(Đã bao gồm VAT nếu có)</p>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-black text-white py-4.5 rounded-2xl text-lg font-bold hover:bg-brand transition-all flex items-center justify-center gap-2 shadow-xl hover:shadow-brand/30 hover:-translate-y-1 mb-4 uppercase">
+                        Xác Nhận Đặt Hàng
+                    </button>
+
+                    <div class="flex items-center justify-center gap-2 text-gray-500 text-xs font-semibold">
+                        <svg class="text-green-500" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                        Thông tin của bạn được bảo mật tuyệt đối
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <footer class="bg-black text-white rounded-t-[3rem] mt-12 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 pt-20 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <div class="md:col-span-6">
+                    <h2 class="text-4xl font-extrabold tracking-tight mb-6 text-white">ChihoShoes!</h2>
+                    <p class="text-gray-400 font-medium leading-relaxed mb-8 max-w-sm">Không chỉ là giày, đó là lối sống. Hãy để chúng tôi đồng hành cùng từng bước chân của bạn trên mọi nẻo đường.</p>
+                </div>
+                <div class="md:col-span-6 flex flex-col md:pl-12 justify-start">
+                    <h4 class="font-bold text-xl mb-6 text-white">Đăng Ký Nhận Tin</h4>
+                    <p class="text-gray-400 mb-4 font-medium">Nhận mã giảm giá 10% cho đơn hàng đầu tiên!</p>
+                    <div class="flex gap-2 max-w-md">
+                        <input type="email" placeholder="Email của bạn" class="flex-1 px-5 py-3.5 bg-white/10 border border-gray-700 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-brand font-medium">
+                        <button class="px-6 py-3.5 bg-brand text-white rounded-xl font-bold hover:bg-brandHover transition-colors shadow-lg shadow-orange-500/20">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-medium">
+                <p>&copy; 2026 ChihoShoes!. Đã đăng ký bản quyền.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="qr-modal" class="fixed inset-0 z-[100] hidden bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl p-8 max-w-sm w-full text-center shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-black">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+
+            <h3 class="text-2xl font-extrabold mb-2 text-black">Chuyển khoản</h3>
+            <p class="text-sm text-gray-500 mb-6">Mở App ngân hàng và quét mã QR</p>
+
+            <div class="w-64 h-64 mx-auto rounded-xl border border-gray-200 mb-6 bg-no-repeat shadow-inner" 
+                 style="background-image: url('image.png'); background-position: center 31%; background-size: 145%;">
+            </div>
+
+            <div class="bg-gray-50 rounded-xl p-4 mb-6 text-left text-sm border border-gray-100">
+                <p class="mb-1 flex justify-between"><span class="text-gray-500">Chủ tài khoản:</span> <strong class="text-black">HO SY ANH DAI</strong></p>
+                <p class="mb-1 flex justify-between"><span class="text-gray-500">Số tài khoản:</span> <strong class="text-brand">169190105</strong></p>
+                <p class="flex justify-between"><span class="text-gray-500">Ngân hàng:</span> <strong class="text-black">MB Bank</strong></p>
+            </div>
+
+            <button type="button" onclick="confirmPayment()" class="w-full bg-brand text-white py-4 rounded-xl text-lg font-bold hover:bg-brandHover transition-all flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30">
+                Kiểm tra thanh toán
+            </button>
+            <button type="button" onclick="closeModal()" class="w-full mt-3 text-gray-500 font-bold hover:text-black py-2">
+                Hủy bỏ
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const productsData = {
+            "nike-air-max-270": { name: "Nike Air Max 270", price: 3800000, img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80", bgColor: "#cb1c22" },
+            "azure-sprint-elite": { name: "Azure Sprint Elite", price: 2500000, img: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500&q=80", bgColor: "#111827" },
+            "air-force-1-white": { name: "Air Force 1 White", price: 2950000, img: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500&q=80", bgColor: "#f3f4f6" },
+            "jordan-1-retro": { name: "Jordan 1 Retro", price: 4200000, img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=500&q=80", bgColor: "#fef08a" },
+            "forest-runner-x": { name: "Forest Runner X", price: 2200000, img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&q=80", bgColor: "#18181b" },
+            "pink-dream-lite": { name: "Pink Dream Lite", price: 1850000, img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500&q=80", bgColor: "#f59e0b" },
+            "classic-tan-heritage": { name: "Classic Tan Heritage", price: 2700000, img: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500&q=80", bgColor: "#4ade80" },
+            "neon-cyber-x": { name: "Neon Cyber X", price: 3400000, img: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=500&q=80", bgColor: "#e0e7ff" }, 
+            "court-legend-purple": { name: "Court Legend Purple", price: 3500000, img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500&q=80", bgColor: "#f3f4f6" },
+            "urban-street-black": { name: "Urban Street Black", price: 2100000, img: "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=500&q=80", bgColor: "#93c5fd" }
+        };
+
+        const formatCurrency = (amount) => amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || 'nike-air-max-270'; 
+        const currentProduct = productsData[productId];
+
+        if (currentProduct) {
+            document.getElementById('checkout-img').src = currentProduct.img;
+            document.getElementById('checkout-img-bg').style.backgroundColor = currentProduct.bgColor;
+            document.getElementById('checkout-name').innerText = currentProduct.name;
+            document.getElementById('checkout-price').innerHTML = `${formatCurrency(currentProduct.price)} <span class="text-sm font-bold text-gray-500">VNĐ</span>`;
+            document.getElementById('summary-subtotal').innerText = `${formatCurrency(currentProduct.price)} VNĐ`;
+            
+            const total = currentProduct.price + 50000;
+            document.getElementById('summary-total').innerHTML = `${formatCurrency(total)} <br><span class="text-2xl text-gray-400">VNĐ</span>`;
+        }
+
+        function handleCheckout(event) {
+            event.preventDefault();
+
+            const paymentMethod = document.querySelector('input[name="payment"]:checked').value;
+
+            if (paymentMethod === 'cod') {
+                alert('🎉 Đặt hàng thành công! Cảm ơn bạn đã mua sắm tại ChihoShoes!');
+                window.location.href = 'index.html'; // Chuyển về trang chủ
+            } else if (paymentMethod === 'bank') {
+                document.getElementById('qr-modal').classList.remove('hidden');
+            }
+        }
+
+        function confirmPayment() {
+            alert('🎉 Thanh toán và đặt hàng thành công! Cảm ơn bạn đã mua sắm tại ChihoShoes!');
+            document.getElementById('qr-modal').classList.add('hidden');
+            window.location.href = 'index.html'; // Chuyển về trang chủ
+        }
+
+        function closeModal() {
+            document.getElementById('qr-modal').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
