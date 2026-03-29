@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChihoShoes! - Chi Tiết Sản Phẩm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        tailwind.config = { theme: { extend: { colors: { brand: '#FF5E00', brandHover: '#E55400', surface: '#F8FAFC' }, fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] } } } }
+    </script>
+</head>
+<body class="bg-surface text-gray-900 font-sans">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-3xl font-extrabold tracking-tighter text-black hover:text-brand transition-colors">ChihoShoes!</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-12">
+        <nav class="flex text-sm font-medium text-gray-500 mb-8 gap-2">
+            <a href="index.html" class="hover:text-black">Trang chủ</a>
+            <span>/</span>
+            <span id="breadcrumb-name" class="text-black font-bold">Nike Air Max 270</span>
+        </nav>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-start bg-white p-8 rounded-[3rem] shadow-sm border border-gray-100 mb-20">
+            <div id="zoom-container" class="w-full bg-[#cb1c22] rounded-[2.5rem] overflow-hidden cursor-zoom-in relative aspect-square p-12 flex items-center justify-center group shadow-inner" onmousemove="zoom(event)" onmouseleave="resetZoom()">
+                <div class="absolute top-6 right-6 bg-white/80 backdrop-blur px-3 py-1.5 rounded-full text-xs font-bold text-gray-600 shadow-sm flex items-center gap-1 opacity-100 group-hover:opacity-0 transition-opacity z-10">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg> Di chuột để phóng to
+                </div>
+                <img id="zoom-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1000&q=80" alt="Sneaker" class="w-full h-auto object-contain transition-transform duration-200 ease-out origin-center drop-shadow-2xl transform">
+            </div>
+
+            <div class="space-y-8 sticky top-32 py-4">
+                <div class="space-y-3">
+                    <div class="inline-block px-3 py-1 bg-gray-100 text-gray-800 font-bold text-xs rounded-full">SNEAKER NAM</div>
+                    <h1 id="product-name" class="text-4xl md:text-5xl font-extrabold tracking-tight text-black leading-tight">Nike Air Max 270</h1>
+                    <div class="flex items-center gap-2">
+                        <div class="flex text-brand"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg><svg width="18" height="18" fill="#e5e7eb" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"/></svg></div>
+                        <span class="text-gray-500 font-medium text-sm">(128 đánh giá)</span>
+                    </div>
+                </div>
+
+                <div class="py-6 border-y border-gray-100">
+                    <p id="product-price" class="text-4xl font-extrabold text-black mb-2">3.800.000 <span class="text-2xl font-bold text-gray-400">VNĐ</span></p>
+                    <p id="product-desc" class="text-gray-500 font-medium leading-relaxed">Giày thể thao cao cấp mang lại sự thoải mái tối đa cho cả ngày dài. Thiết kế đường phố năng động, nổi bật với đệm khí trợ lực tiên tiến nhất.</p>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-end mb-4">
+                        <h3 class="font-bold text-lg">Chọn Kích Cỡ</h3>
+                    </div>
+                    <div class="grid grid-cols-5 gap-3">
+                        <label class="cursor-pointer"><input type="radio" name="size" class="sr-only peer" value="39"><div class="py-3 text-center border-2 border-gray-200 rounded-xl font-bold peer-checked:border-brand peer-checked:bg-orange-50 peer-checked:text-brand hover:border-gray-300 transition-all text-gray-700">39</div></label>
+                        <label class="cursor-pointer"><input type="radio" name="size" class="sr-only peer" value="40"><div class="py-3 text-center border-2 border-gray-200 rounded-xl font-bold peer-checked:border-brand peer-checked:bg-orange-50 peer-checked:text-brand hover:border-gray-300 transition-all text-gray-700">40</div></label>
+                        <label class="cursor-pointer"><input type="radio" name="size" class="sr-only peer" value="41"><div class="py-3 text-center border-2 border-gray-200 rounded-xl font-bold peer-checked:border-brand peer-checked:bg-orange-50 peer-checked:text-brand hover:border-gray-300 transition-all text-gray-700">41</div></label>
+                        <label class="cursor-pointer"><input type="radio" name="size" class="sr-only peer" value="42"><div class="py-3 text-center border-2 border-gray-200 rounded-xl font-bold peer-checked:border-brand peer-checked:bg-orange-50 peer-checked:text-brand hover:border-gray-300 transition-all text-gray-700">42</div></label>
+                        <label class="cursor-pointer"><input type="radio" name="size" class="sr-only peer" value="43"><div class="py-3 text-center border-2 border-gray-200 rounded-xl font-bold peer-checked:border-brand peer-checked:bg-orange-50 peer-checked:text-brand hover:border-gray-300 transition-all text-gray-700">43</div></label>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 pt-4">
+                    <a id="checkout-link" href="checkout.html" onclick="return validateSizeSelection(event)" class="w-full bg-black text-white py-4 rounded-2xl text-lg font-bold hover:bg-brand transition-all flex items-center justify-center gap-2 shadow-xl hover:shadow-brand/30 hover:-translate-y-1">
+                        Thanh toán sản phẩm
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="flex justify-between items-end mb-8">
+                <h2 class="text-3xl font-extrabold tracking-tight text-black">Có Thể Bạn Sẽ Thích</h2>
+                <a href="index.html#products" class="text-brand font-bold hover:underline">Xem thêm danh mục →</a>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <script>
+                    const relatedProducts = [
+                        { id: "azure-sprint-elite", name: "Azure Sprint Elite", price: "2.500.000", img: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=500&q=80", bg: "bg-gray-100" },
+                        { id: "air-force-1-white", name: "Air Force 1 White", price: "2.950.000", img: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=500&q=80", bg: "bg-gray-100" },
+                        { id: "neon-cyber-x", name: "Neon Cyber X", price: "3.400.000", img: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=500&q=80", bg: "bg-indigo-50" },
+                        { id: "forest-runner-x", name: "Forest Runner X", price: "2.200.000", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=500&q=80", bg: "bg-zinc-900" }
+                    ];
+
+                    relatedProducts.forEach(p => {
+                        document.write(`
+                            <div class="group relative bg-white rounded-3xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col h-full hover:-translate-y-2">
+                                <a href="product.html?id=${p.id}" class="block relative ${p.bg} rounded-2xl overflow-hidden aspect-square mb-5">
+                                    <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out">
+                                </a>
+                                <div class="flex flex-col flex-grow px-2 pb-2">
+                                    <a href="product.html?id=${p.id}"><h3 class="font-bold text-gray-900 text-lg leading-tight mb-2 hover:text-brand transition-colors">${p.name}</h3></a>
+                                    <div class="mt-auto flex items-center justify-between">
+                                        <p class="text-lg font-extrabold text-black">${p.price} <span class="text-sm font-semibold text-gray-500">đ</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-black text-white rounded-t-[3rem] mt-12 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 pt-20 pb-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <div class="md:col-span-6">
+                    <h2 class="text-4xl font-extrabold tracking-tight mb-6 text-white">ChihoShoes!</h2>
+                    <p class="text-gray-400 font-medium leading-relaxed mb-8 max-w-sm">Không chỉ là giày, đó là lối sống. Hãy để chúng tôi đồng hành cùng từng bước chân của bạn trên mọi nẻo đường.</p>
+                </div>
+                <div class="md:col-span-6 flex flex-col md:pl-12 justify-start">
+                    <h4 class="font-bold text-xl mb-6 text-white">Đăng Ký Nhận Tin</h4>
+                    <p class="text-gray-400 mb-4 font-medium">Nhận mã giảm giá 10% cho đơn hàng đầu tiên!</p>
+                    <div class="flex gap-2 max-w-md">
+                        <input type="email" placeholder="Email của bạn" class="flex-1 px-5 py-3.5 bg-white/10 border border-gray-700 rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-brand font-medium">
+                        <button class="px-6 py-3.5 bg-brand text-white rounded-xl font-bold hover:bg-brandHover transition-colors shadow-lg shadow-orange-500/20">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-medium">
+                <p>&copy; 2026 ChihoShoes!. Đã đăng ký bản quyền.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const productsData = {
+            "nike-air-max-270": { name: "Nike Air Max 270", price: "3.800.000", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1000&q=80", bgColor: "#cb1c22", desc: "Giày thể thao cao cấp mang lại sự thoải mái tối đa cho cả ngày dài. Thiết kế đường phố năng động, nổi bật với đệm khí trợ lực tiên tiến nhất." },
+            "azure-sprint-elite": { name: "Azure Sprint Elite", price: "2.500.000", img: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=1000&q=80", bgColor: "#f3f4f6", desc: "Được thiết kế với công nghệ siêu nhẹ, Azure Sprint Elite giúp bạn bứt tốc trên mọi nẻo đường." },
+            "air-force-1-white": { name: "Air Force 1 White", price: "2.950.000", img: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=1000&q=80", bgColor: "#f3f4f6", desc: "Biểu tượng của thời trang đường phố không bao giờ lỗi mốt. Phối màu trắng tinh khôi dễ dàng kết hợp mọi outfit." },
+            "jordan-1-retro": { name: "Jordan 1 Retro", price: "4.200.000", img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=1000&q=80", bgColor: "#fef08a", desc: "Phiên bản Retro giữ nguyên giá trị lịch sử và kiểu dáng nguyên bản cổ điển của dòng giày bóng rổ huyền thoại." },
+            "forest-runner-x": { name: "Forest Runner X", price: "2.200.000", img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=1000&q=80", bgColor: "#18181b", desc: "Sự kết hợp hoàn hảo giữa độ bền bỉ và kiểu dáng hầm hố, thích hợp cho các hoạt động dã ngoại." },
+            "pink-dream-lite": { name: "Pink Dream Lite", price: "1.850.000", img: "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=1000&q=80", bgColor: "#fb923c", desc: "Màu sắc nổi bật phối cùng chất liệu canvas thoáng khí, đem lại cảm giác êm ái khi dạo phố." },
+            "classic-tan-heritage": { name: "Classic Tan Heritage", price: "2.700.000", img: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1000&q=80", bgColor: "#4ade80", desc: "Phong cách hoài cổ màu sắc tươi mới độc đáo, mang đến sự khác biệt giữa đám đông." },
+            "neon-cyber-x": { name: "Neon Cyber X", price: "3.400.000", img: "https://images.unsplash.com/photo-1595341888016-a392ef81b7de?w=1000&q=80", bgColor: "#e0e7ff", desc: "Đôi giày mang phong cách tương lai với các đường nét phản quang táo bạo, thiết kế đế chunky cực kỳ êm ái và tôn dáng." },
+            "court-legend-purple": { name: "Court Legend Purple", price: "3.500.000", img: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=1000&q=80", bgColor: "#f3f4f6", desc: "Thiết kế hiện đại và phá cách, dành riêng cho những tín đồ yêu thích sự nổi bật." },
+            "urban-street-black": { name: "Urban Street Black", price: "2.100.000", img: "https://images.unsplash.com/photo-1605348532760-6753d2c43329?w=1000&q=80", bgColor: "#93c5fd", desc: "Đôi giày basic đen không thể thiếu trong tủ đồ của bất kỳ ai, bất chấp mọi loại địa hình đô thị." }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || 'nike-air-max-270'; 
+        const currentProduct = productsData[productId];
+
+        if (currentProduct) {
+            document.title = `ChihoShoes! - ${currentProduct.name}`;
+            document.getElementById('breadcrumb-name').innerText = currentProduct.name;
+            document.getElementById('product-name').innerText = currentProduct.name;
+            document.getElementById('product-price').innerHTML = `${currentProduct.price} <span class="text-2xl font-bold text-gray-400">VNĐ</span>`;
+            document.getElementById('product-desc').innerText = currentProduct.desc;
+            document.getElementById('zoom-img').src = currentProduct.img;
+            document.getElementById('zoom-img').alt = currentProduct.name;
+            document.getElementById('zoom-container').style.backgroundColor = currentProduct.bgColor;
+            
+            // Thiết lập URL cơ bản cho nút thanh toán
+            document.getElementById('checkout-link').href = "checkout.html?id=" + productId;
+        }
+
+        // HÀM KIỂM TRA ĐÃ CHỌN SIZE HAY CHƯA
+        function validateSizeSelection(event) {
+            const selectedSize = document.querySelector('input[name="size"]:checked');
+            
+            // Nếu người dùng chưa chọn ô size nào
+            if (!selectedSize) {
+                event.preventDefault(); // Chặn việc chuyển trang
+                alert('⚠️ Vui lòng chọn kích cỡ giày trước khi thanh toán!');
+                return false;
+            }
+            
+            // Tùy chọn: Thêm size vào đường dẫn URL (checkout.html?id=...&size=41)
+            const link = document.getElementById('checkout-link');
+            const url = new URL(link.href);
+            url.searchParams.set('size', selectedSize.value);
+            link.href = url.toString();
+            
+            return true; // Cho phép chuyển trang
+        }
+
+        function zoom(e) {
+            const container = document.getElementById('zoom-container');
+            const img = document.getElementById('zoom-img');
+            const { left, top, width, height } = container.getBoundingClientRect();
+            const x = ((e.clientX - left) / width) * 100;
+            const y = ((e.clientY - top) / height) * 100;
+            img.style.transformOrigin = `${x}% ${y}%`;
+            img.style.transform = 'scale(2)'; 
+        }
+        function resetZoom() {
+            const img = document.getElementById('zoom-img');
+            img.style.transformOrigin = 'center center';
+            img.style.transform = 'scale(1)'; 
+        }
+    </script>
+</body>
+</html>
